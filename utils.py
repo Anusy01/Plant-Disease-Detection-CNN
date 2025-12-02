@@ -9,8 +9,12 @@ def clean_image(image):
     image = np.array(image)
     
     # Resizing the image
-    image = np.array(Image.fromarray(
-        image).resize((512, 512), Image.ANTIALIAS))
+    image = np.array(
+    Image.fromarray(np.array(image)).resize(
+        (512, 512), Image.Resampling.LANCZOS
+    )
+)
+
         
     # Adding batch dimensions to the image
     # YOu are seeting :3, that's becuase sometimes user upload 4 channel image,
@@ -29,7 +33,8 @@ def get_prediction(model, image):
     test = datagen.flow(image)
     
     # Predict from the image
-    predictions = model.predict(test)
+    predictions = model.predict(test, verbose=0)
+
     predictions_arr = np.array(np.argmax(predictions))
     
     return predictions, predictions_arr

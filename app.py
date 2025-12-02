@@ -7,8 +7,9 @@ import tensorflow as tf
 from utils import clean_image, get_prediction, make_results
 
 # Loading the Model and saving to cache
-@st.cache(allow_output_mutation=True)
+@st.cache_resource
 def load_model(path):
+
     
     # Xception Model
     xception_model = tf.keras.models.Sequential([
@@ -71,8 +72,15 @@ if uploaded_file != None:
     
     # Reading the uploaded image
     image = Image.open(io.BytesIO(uploaded_file.read()))
-    st.image(np.array(Image.fromarray(
-        np.array(image)).resize((700, 400), Image.ANTIALIAS)), width=None)
+    st.image(
+    np.array(
+        Image.fromarray(np.array(image)).resize(
+            (700, 400), Image.Resampling.LANCZOS
+        )
+    )
+)
+
+
     my_bar.progress(i + 40)
     
     # Cleaning the image
@@ -93,6 +101,3 @@ if uploaded_file != None:
     
     # Show the results
     st.write(f"The plant {result['status']} with {result['prediction']} prediction.")
-
-    
-        
