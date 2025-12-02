@@ -1,41 +1,48 @@
-# Plant-Disease-Detection
+# Plant Disease Detection using CNN
 
+## Description
+This project implements a Convolutional Neural Network (CNN)–based system to
+detect plant diseases from leaf images. The model predicts whether a plant is
+healthy or affected by a specific disease along with prediction confidence
+(e.g., Scab – 89%, Healthy – 100%).  
+The system is designed to assist farmers and agricultural researchers in early
+disease detection and crop health monitoring.
 
+---
 
-### Steps to run Code
-- Clone the repository.
-```
-git clone https://github.com/noorkhokhar99/Plant-Disease-Detection.git
-```
-- Goto the cloned folder.
-```
+## Features
+- Image-based plant disease classification
+- CNN-based deep learning model
+- Prediction with confidence score
+- Simple Streamlit web interface
+- Supports scalable and automated diagnosis
+
+---
+
+## Technology Stack
+- Python
+- TensorFlow / Keras
+- CNN (Deep Learning)
+- Streamlit
+- NumPy, OpenCV
+
+---
+
+## Steps to Run the Project
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Anusy01/Plant-Disease-Detection-CNN.git
 cd Plant-Disease-Detection
-
-```
-- Upgrade pip with the mentioned command below.
-```
 pip install --upgrade pip
-```
-- Install requirements with the mentioned command below.
-```
 pip install -r requirements.txt
-```
-- Run the code with the mentioned command below.
 
-streamlit run app.py 
- 
+Download model.h5 from the link below and place it in the project folder:
+https://drive.google.com/drive/folders/1siPKe3pmQdBkYxD42_8-qlL19Qh1XSHV
 
+Run the application
+streamlit run app.py
 
-
-
-### Watch the Complete Step by Step Explanation click image
-
-[![Watch the video](https://github.com/noorkhokhar99/Plant-Disease-Detection/blob/main/Pyresearch.png)](https://www.youtube.com/watch?v=jJmyfiyNv04)
-
-
-download the model from here: https://drive.google.com/drive/folders/1siPKe3pmQdBkYxD42_8-qlL19Qh1XSHV?usp=sharing
-
-
-
-If you find my videos useful,  I would love your support on Pyresearch: https://www.youtube.com/c/Pyresearch
-
+Output:
+Predicts plant disease (e.g., Scab, Healthy)
+Displays prediction confidence percentage
